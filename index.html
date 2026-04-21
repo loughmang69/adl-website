@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADL Business Consulting | Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .logo-placeholder {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-container {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        input[type="email"] {
+            flex-grow: 1;
+            padding: 0.9rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="email"]:focus {
+            border-color: #38bdf8;
+        }
+
+        button {
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            border: none;
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background: #7dd3fc;
+            transform: translateY(-1px);
+        }
+
+        .glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            top: -10%;
+            right: -10%;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 0.8rem;
+            color: #475569;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 600px) {
+            .cta-form {
+                flex-direction: column;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+
+    <div class="container">
+        <div class="badge">Official Site Coming Soon</div>
+        <div class="logo-placeholder">ADL</div>
+        <h1>ADL Business Consulting</h1>
+        <p>Expert strategy and tailored solutions to accelerate your business growth. We are currently preparing our digital home.</p>
+        
+        <div class="form-container">
+            <form class="cta-form" action="#" onsubmit="alert('Thank you for your interest. We will be in touch soon.'); return false;">
+                <input type="email" placeholder="Your professional email address" required>
+                <button type="submit">Get Notified</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 ADL Business Consulting. Professional Excellence in Strategy.
+    </footer>
+</body>
+</html>
