@@ -8,7 +8,6 @@
     <style>
         :root {
             --brand-primary: #2c5e8c;
-            --soft-blue: #f0f4f8;
             --glass-bg: rgba(255, 255, 255, 0.85);
         }
 
@@ -69,15 +68,12 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .logo-section {
-            margin-bottom: 35px;
-        }
-
         .logo-img {
             max-width: 500px;
             width: 100%;
             height: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.03));
+            margin-bottom: 35px;
         }
 
         .branding-divider {
@@ -117,7 +113,6 @@
             border: 1px solid #e2e8f0;
             background: white;
             font-size: 1rem;
-            color: #1e293b;
             outline: none;
             transition: all 0.3s ease;
         }
@@ -136,13 +131,12 @@
             font-weight: 600;
             font-family: 'Montserrat', sans-serif;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
         }
 
         button:hover {
             background: #1e4569;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px rgba(44, 94, 140, 0.4);
         }
 
         footer {
@@ -155,10 +149,8 @@
         }
 
         @media (max-width: 600px) {
-            .glass-card { padding: 40px 20px; }
             .subscription-form { flex-direction: column; }
             h1 { font-size: 1.4rem; }
-            .logo-img { max-width: 300px; }
         }
     </style>
 </head>
@@ -166,23 +158,24 @@
     <div class="circuit-overlay"></div>
 
     <div class="glass-card">
-        <div class="logo-section">
-            <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
-        </div>
-
+        <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
         <div class="branding-divider"></div>
 
         <h1>Excellence in Strategy. Coming Soon.</h1>
         <p class="message">Connecting Strategic Vision with Precision Solutions.<br>Our new digital platform is currently under construction.</p>
 
-        <form class="subscription-form" action="#" onsubmit="alert('You have been successfully added to our update list.'); return false;">
+        <form class="subscription-form" action="#" onsubmit="alert('You have been added to our list.'); return false;">
             <input type="email" placeholder="Professional Email Address" required>
             <button type="submit">Notify Me</button>
         </form>
     </div>
 
     <footer>
-        &copy; 2024 ADL Business Consulting. | Professional Strategy
+        &copy; <span id="year"></span> ADL Business Consulting | Professional Strategy
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
