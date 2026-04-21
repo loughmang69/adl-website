@@ -4,165 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADL Business Consulting | Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --brand-blue: #2c5e8c;
-            --brand-light-blue: #e8f1f8;
-            --text-dark: #1a2b3c;
-            --text-muted: #5a6b7d;
-            --white: #ffffff;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        body, html {
+            height: 100%;
+            width: 100%;
+        }
+
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f9;
-            /* Subtle circuitry pattern background to match logo */
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23dce4eb' stroke-width='1'%3E%3Cpath d='M40 40c0-8.837 7.163-16 16-16s16 7.163 16 16-7.163 16-16 16-16-7.163-16-16zM0 40c0-8.837 7.163-16 16-16s16 7.163 16 16-7.163 16-16 16S0 48.837 0 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: var(--text-dark);
-            height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff; /* Pure white to match logo background */
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             overflow: hidden;
         }
 
-        .main-container {
+        /* Circuitry-style background decoration */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            position: relative;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10L90 90M90 10L10 90' stroke='%23f0f4f8' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='2' fill='%23e2e8f0'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            z-index: -1;
         }
 
-        .logo-container {
-            margin-bottom: 30px;
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-wrapper {
+            margin-bottom: 20px;
         }
 
         .logo-img {
-            max-width: 400px;
-            width: 100%;
+            max-width: 100%;
             height: auto;
+            width: 550px; /* Sizing it specifically for impact */
         }
 
-        .accent-line {
+        .hero-line {
+            height: 4px;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--brand-blue), transparent);
-            margin: 25px 0;
-            opacity: 0.3;
+            background: linear-gradient(90deg, #ffffff 0%, #2c5e8c 50%, #ffffff 100%);
+            margin: 30px 0;
+            border-radius: 2px;
         }
 
         h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: #1a2b3c;
+            margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            line-height: 1.6;
+        p.sub-heading {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 40px;
+            font-weight: 400;
         }
 
-        .cta-box {
+        .form-group {
             max-width: 500px;
             margin: 0 auto;
-        }
-
-        .input-group {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
         }
 
         input[type="email"] {
             flex: 1;
-            padding: 14px 20px;
+            padding: 15px 20px;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            border: 1px solid #ced4da;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         input[type="email"]:focus {
-            border-color: var(--brand-blue);
+            border-color: #2c5e8c;
+            box-shadow: 0 0 0 3px rgba(44, 94, 140, 0.1);
         }
 
         button {
-            background-color: var(--brand-blue);
+            padding: 15px 30px;
+            background-color: #2c5e8c;
             color: white;
             border: none;
-            padding: 14px 28px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #1e4569;
+            background-color: #1e3f5f;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(44, 94, 140, 0.3);
+            box-shadow: 0 8px 15px rgba(44, 94, 140, 0.2);
         }
 
         footer {
             position: absolute;
             bottom: 30px;
+            width: 100%;
+            text-align: center;
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: #a0aec0;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 600px) {
-            .input-group {
-                flex-direction: column;
-            }
+            .form-group { flex-direction: column; }
             h1 { font-size: 1.5rem; }
-            .logo-img { max-width: 300px; }
+            .logo-img { width: 350px; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-pattern"></div>
 
-    <div class="main-container">
-        <div class="logo-container">
-            <!-- Ensure your uploaded logo is named logo.jpg -->
-            <img src="logo.jpg" alt="ADL Business Consulting Logo" class="logo-img">
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
         </div>
 
-        <div class="accent-line"></div>
+        <div class="hero-line"></div>
 
-        <h1>Our Full Digital Platform is Coming Soon.</h1>
-        <p>Connecting Strategic Vision with Precision Solutions.</p>
+        <h1>Our Full Digital Platform is Coming Soon</h1>
+        <p class="sub-heading">Connecting Strategic Vision with Precision Solutions.</p>
 
-        <div class="cta-box">
-            <form action="#" onsubmit="alert('Thank you. You have been added to our early access list.'); return false;">
-                <div class="input-group">
-                    <input type="email" placeholder="Enter your business email address" required>
-                    <button type="submit">Notify Me</button>
-                </div>
-            </form>
-            <p style="font-size: 0.9rem; margin-top: 10px;">Stay informed. Sign up to receive an exclusive early access invitation.</p>
-        </div>
+        <form class="form-group" action="#" onsubmit="alert('You have been added to our notification list.'); return false;">
+            <input type="email" placeholder="Business email address" required>
+            <button type="submit">Notify Me</button>
+        </form>
     </div>
 
     <footer>
-        &copy; 2024 ADL Business Consulting. All rights reserved. | Powered by GitHub Pages
+        &copy; 2024 ADL BUSINESS CONSULTING. ALL RIGHTS RESERVED.
     </footer>
-
 </body>
 </html>
