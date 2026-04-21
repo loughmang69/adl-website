@@ -4,167 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADL Business Consulting | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand-primary: #2c5e8c;
+            --soft-blue: #f0f4f8;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
         body, html {
             height: 100%;
             width: 100%;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #ffffff; /* Pure white to match logo background */
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
 
-        /* Circuitry-style background decoration */
-        .bg-pattern {
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .circuit-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10L90 90M90 10L10 90' stroke='%23f0f4f8' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='2' fill='%23e2e8f0'/%3E%3C/svg%3E");
-            opacity: 0.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23cbd5e1' stroke-width='0.5' stroke-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             z-index: -1;
         }
 
-        .container {
-            text-align: center;
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            padding: 60px 40px;
             max-width: 800px;
             width: 90%;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-            animation: fadeIn 1.2s ease-out;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.98) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .logo-wrapper {
-            margin-bottom: 20px;
+        .logo-section {
+            margin-bottom: 35px;
         }
 
         .logo-img {
-            max-width: 100%;
+            max-width: 500px;
+            width: 100%;
             height: auto;
-            width: 550px; /* Sizing it specifically for impact */
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.03));
         }
 
-        .hero-line {
-            height: 4px;
-            width: 100%;
-            background: linear-gradient(90deg, #ffffff 0%, #2c5e8c 50%, #ffffff 100%);
-            margin: 30px 0;
-            border-radius: 2px;
+        .branding-divider {
+            height: 1px;
+            width: 120px;
+            background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
+            margin: 25px auto;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            color: #1a2b3c;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
+            font-size: 1.85rem;
+            font-weight: 500;
+            color: #1e293b;
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
         }
 
-        p.sub-heading {
-            font-size: 1.2rem;
-            color: #4a5568;
+        .message {
+            font-size: 1.1rem;
+            color: #64748b;
             margin-bottom: 40px;
-            font-weight: 400;
+            line-height: 1.6;
         }
 
-        .form-group {
-            max-width: 500px;
-            margin: 0 auto;
+        .subscription-form {
             display: flex;
-            gap: 10px;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
         }
 
         input[type="email"] {
             flex: 1;
-            padding: 15px 20px;
+            padding: 16px 24px;
+            border-radius: 12px;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            background: white;
             font-size: 1rem;
+            color: #1e293b;
             outline: none;
-            transition: all 0.3s;
-        }
-
-        input[type="email"]:focus {
-            border-color: #2c5e8c;
-            box-shadow: 0 0 0 3px rgba(44, 94, 140, 0.1);
-        }
-
-        button {
-            padding: 15px 30px;
-            background-color: #2c5e8c;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
 
+        input[type="email"]:focus {
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 4px rgba(44, 94, 140, 0.08);
+        }
+
+        button {
+            padding: 16px 32px;
+            background: var(--brand-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
         button:hover {
-            background-color: #1e3f5f;
+            background: #1e4569;
             transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(44, 94, 140, 0.2);
+            box-shadow: 0 10px 20px -10px rgba(44, 94, 140, 0.4);
         }
 
         footer {
             position: absolute;
-            bottom: 30px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #a0aec0;
-            letter-spacing: 1px;
+            bottom: 40px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         @media (max-width: 600px) {
-            .form-group { flex-direction: column; }
-            h1 { font-size: 1.5rem; }
-            .logo-img { width: 350px; }
+            .glass-card { padding: 40px 20px; }
+            .subscription-form { flex-direction: column; }
+            h1 { font-size: 1.4rem; }
+            .logo-img { max-width: 300px; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-pattern"></div>
+    <div class="circuit-overlay"></div>
 
-    <div class="container">
-        <div class="logo-wrapper">
+    <div class="glass-card">
+        <div class="logo-section">
             <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
         </div>
 
-        <div class="hero-line"></div>
+        <div class="branding-divider"></div>
 
-        <h1>Our Full Digital Platform is Coming Soon</h1>
-        <p class="sub-heading">Connecting Strategic Vision with Precision Solutions.</p>
+        <h1>Excellence in Strategy. Coming Soon.</h1>
+        <p class="message">Connecting Strategic Vision with Precision Solutions.<br>Our new digital platform is currently under construction.</p>
 
-        <form class="form-group" action="#" onsubmit="alert('You have been added to our notification list.'); return false;">
-            <input type="email" placeholder="Business email address" required>
+        <form class="subscription-form" action="#" onsubmit="alert('You have been successfully added to our update list.'); return false;">
+            <input type="email" placeholder="Professional Email Address" required>
             <button type="submit">Notify Me</button>
         </form>
     </div>
 
     <footer>
-        &copy; 2024 ADL BUSINESS CONSULTING. ALL RIGHTS RESERVED.
+        &copy; 2024 ADL Business Consulting. | Professional Strategy
     </footer>
 </body>
 </html>
