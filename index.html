@@ -55,7 +55,7 @@
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 24px;
-            padding: 60px 40px;
+            padding: 80px 40px;
             max-width: 800px;
             width: 90%;
             text-align: center;
@@ -69,74 +69,35 @@
         }
 
         .logo-img {
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
             height: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.03));
-            margin-bottom: 35px;
         }
 
         .branding-divider {
-            height: 1px;
-            width: 120px;
+            height: 3px; /* Increased thickness */
+            width: 300px; /* Increased width */
             background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
-            margin: 25px auto;
+            margin: 40px auto;
+            border-radius: 2px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.85rem;
+            font-size: 2rem;
             font-weight: 500;
             color: #1e293b;
             letter-spacing: -0.025em;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .message {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #64748b;
-            margin-bottom: 40px;
             line-height: 1.6;
-        }
-
-        .subscription-form {
-            display: flex;
-            gap: 12px;
-            max-width: 520px;
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        input[type="email"] {
-            flex: 1;
-            padding: 16px 24px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            background: white;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        input[type="email"]:focus {
-            border-color: var(--brand-primary);
-            box-shadow: 0 0 0 4px rgba(44, 94, 140, 0.08);
-        }
-
-        button {
-            padding: 16px 32px;
-            background: var(--brand-primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        button:hover {
-            background: #1e4569;
-            transform: translateY(-2px);
         }
 
         footer {
@@ -149,8 +110,9 @@
         }
 
         @media (max-width: 600px) {
-            .subscription-form { flex-direction: column; }
-            h1 { font-size: 1.4rem; }
+            .glass-card { padding: 60px 20px; }
+            h1 { font-size: 1.5rem; }
+            .branding-divider { width: 180px; }
         }
     </style>
 </head>
@@ -159,15 +121,11 @@
 
     <div class="glass-card">
         <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
+        
         <div class="branding-divider"></div>
 
         <h1>Excellence in Strategy. Coming Soon.</h1>
         <p class="message">Connecting Strategic Vision with Precision Solutions.<br>Our new digital platform is currently under construction.</p>
-
-        <form class="subscription-form" action="#" onsubmit="alert('You have been added to our list.'); return false;">
-            <input type="email" placeholder="Professional Email Address" required>
-            <button type="submit">Notify Me</button>
-        </form>
     </div>
 
     <footer>
