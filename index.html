@@ -8,7 +8,7 @@
     <style>
         :root {
             --brand-primary: #2c5e8c;
-            --glass-bg: rgba(255, 255, 255, 0.85);
+            --pure-white: #ffffff;
         }
 
         * {
@@ -28,15 +28,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-color: var(--pure-white); /* Match logo background exactly */
         }
 
         .circuit-overlay {
@@ -45,58 +37,56 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23cbd5e1' stroke-width='0.5' stroke-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23cbd5e1' stroke-width='0.4' stroke-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             z-index: -1;
         }
 
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 24px;
+        .main-content {
+            background: var(--pure-white);
             padding: 80px 40px;
-            max-width: 800px;
-            width: 90%;
+            max-width: 900px;
+            width: 95%;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Using a very soft shadow rather than a border to create the "card" feel */
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.05);
+            border-radius: 30px;
+            animation: fadeIn 1.2s ease-out;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: scale(0.98) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-img {
-            max-width: 550px;
+            max-width: 650px; /* Significantly increased logo size */
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.03));
+            margin-bottom: 20px;
         }
 
         .branding-divider {
-            height: 3px; /* Increased thickness */
-            width: 300px; /* Increased width */
+            height: 4px;
+            width: 350px; /* Slightly wider for the larger logo */
             background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
-            margin: 40px auto;
-            border-radius: 2px;
+            margin: 30px auto 45px auto;
+            border-radius: 4px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 500;
             color: #1e293b;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
             margin-bottom: 15px;
         }
 
         .message {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #64748b;
             line-height: 1.6;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -110,16 +100,17 @@
         }
 
         @media (max-width: 600px) {
-            .glass-card { padding: 60px 20px; }
-            h1 { font-size: 1.5rem; }
-            .branding-divider { width: 180px; }
+            .main-content { padding: 40px 20px; }
+            h1 { font-size: 1.6rem; }
+            .logo-img { max-width: 100%; }
+            .branding-divider { width: 220px; }
         }
     </style>
 </head>
 <body>
     <div class="circuit-overlay"></div>
 
-    <div class="glass-card">
+    <div class="main-content">
         <img src="logo.jpg" alt="ADL Business Consulting" class="logo-img">
         
         <div class="branding-divider"></div>
